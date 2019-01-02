@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.myDiv {
+    border: 1px solid black;
+    background-color: yellow;
+    }
+</style>
+</head>
+<body>
+
+<h1 class="myDiv">HighLight me</h1>
+<h2 class="myDiv">HighLight me</h2>
+<h3 class="myDiv">HighLight me</h3>
+
+<script>
+    
+var myPointer = document.querySelectorAll(".myDiv");
+    
+myPointer.forEach( (e) => e.addEventListener("mouseover", function () { mouseOver(e) } ) );
+myPointer.forEach( (e) => e.addEventListener("mouseout", function () { mouseOut(e) } ) );
+
+function mouseOver(e) {
+e.style.color = "blue";
+}
+
+function mouseOut(e) {
+e.style.color = "black";
+}
+
+</script>
+</body>
+</html>
