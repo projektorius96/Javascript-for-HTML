@@ -17,9 +17,16 @@
 <script>
     
 var myPointer = document.querySelectorAll(".myDiv");
-
+    
 myPointer.forEach((e) => e.addEventListener("mouseover", () => mouseOver(e)));
 myPointer.forEach((e) => e.addEventListener("mouseout", () => mouseOut(e)));
+    
+/* Without ***fatArrow ()=> syntax*** (see below in the comments) */
+
+/* 
+myPointer.forEach( (e) => e.addEventListener("mouseover", function () { mouseOver(e) } ) );
+myPointer.forEach( (e) => e.addEventListener("mouseout", function () { mouseOut(e) } ) );
+*/
 
 function mouseOver(e) {
 e.style.color = "red";
