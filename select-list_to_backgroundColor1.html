@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Change Body Color!</h1>
+
+<select id="select" onclick="myFunction()">
+        </select>
+        
+        <script>
+            
+            /* http://1bestcsharp.blogspot.co.uk/2017/03/javascript-populate-select-option-from-array.html */
+            var select = document.getElementById("select");
+            arr = ["yellow","green","red","orange",];
+            
+             for(var i = 0; i < arr.length; i++)
+             {
+                 var option = document.createElement("option"),
+                 txt = document.createTextNode(arr[i]);
+                 option.appendChild(txt);
+                 option.setAttribute("value",arr[i]);
+                 select.insertBefore(option,select.lastChild);
+             }
+            function myFunction() {
+            var x = document.getElementById("select").value;
+            switch (x) 
+            {   case 0:
+                document.getElementById("select").value == this.arr[0];
+                break;
+               /* case 1:
+                document.getElementById("select").value == this.arr[1]; */
+                break;
+                case 2:
+                document.getElementById("select").value == this.arr[2];
+                break;
+                case 3:
+                document.getElementById("select").value == this.arr[3];
+                break;
+            }
+            document.body.style.backgroundColor = x;
+            }
+</script>
+
+</body>
+</html>
