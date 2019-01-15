@@ -19,17 +19,15 @@
 
 // [STEP 2 START HERE]
 // 2.1 step _if we want to apply eventObject methods and properties (MEANT FOR eventDelegation)
-/* function eHandler(refPara) {
-var objTarget = refPara.[eventMethod] // objTarget is now in referance with event Object | [eventMethod] is not a part of syntax!
+/* function eHandler(refPara, someCustomParameterToBeModified) {
 var objTarget = refPara.[eventProperty] // objTarget is now in a referance with event Object | [eventPropery] is not a part of syntax!
-// for shortcut of 2.1 step use this body snippet written below (to avoid objTarget variable initialization):
-// refPara.[eventMethod].style.color = "red"; (*syntax)
-// refPara.target.style.color = "red"; (the practical example of *syntax written one line above)
+var objTarget = refPara.target.style.color = "red"; (the practical example of *syntax written one line above)
+someCustomParameterToBeModified.objTarget...DO SOME THINGS... (REQUIRE DEEPER PRACTICS TO FINISH SYNTAX)
 } */
 
 // 2.2 step _if we DO NOT want to apply eventObject methods and properties (MEANT FOR NO eventDelegation)
 // 2.2.1 _if eHandler has noParameters
-/* function eHandler() {
+/* function eHandler(if noParameters when eventDelegation is not available, logically) {
 /* ...DO SOME THINGS for JSvariable 
 which is in reference with some HTML element being affected in nearly future...  
 } */
@@ -45,9 +43,11 @@ which is in reference with some HTML element being affected in nearly future...
 // 1 step _if eHandler of eListener has noParameters
 // variable.addEventListener('event','eHandler', false);
 
-// 1 step _if eHandler of eListner has someParameters AND we want to apply eventDelegation
+// 1.1 step _if eHandler of eListner has someParameters AND we want to apply eventDelegation
 // variable.addEventListener('event', function (refPara) { eHandler (refPara, 10); }, false);
 
-// 1 step _if eHandler of eListner has someParameters BUT we DO NOT want to apply eventDelegation
+// 1.1 step _if eHandler of eListner has someParameters BUT we DO NOT want to apply eventDelegation
 // variable.addEventListener('event', function () { eHandler (someCustomParamter); }, false);
 // [STEP 1 ENDS UP HERE]
+
+// EVENT OBJECT IS CREATED AND USED ONLY FOR EVENT DELEGATION
