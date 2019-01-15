@@ -31,13 +31,13 @@ var objTarget = refPara.[eventProperty] // objTarget is now in a referance with 
 // 2.2.1 _if eHandler has noParameters
 /* function eHandler() {
 /* ...DO SOME THINGS for JSvariable 
-which is in reference with some HTML element being affected in nearly future... */ 
+which is in reference with some HTML element being affected in nearly future...  
 } */
 
 // 2.2.2 _if eHandler has someParameters
 /* function eHandler() {
 /* ...DO SOME THINGS for JSvariable 
-which is in reference with some HTML element being affected in nearly future... */ 
+which is in reference with some HTML element being affected in nearly future... 
 } */
 // [STEP 2 ENDS UP HERE]
 
