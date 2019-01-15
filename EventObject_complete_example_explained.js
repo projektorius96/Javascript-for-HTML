@@ -20,9 +20,9 @@
 // [STEP 2 START HERE]
 // 2.1 step _if we want to apply eventObject methods and properties (MEANT FOR eventDelegation)
 /* function eHandler(refPara, someCustomParameterToBeModified) {
-var objTarget = refPara.[eventProperty] // objTarget is now in a referance with event Object | [eventPropery] is not a part of syntax!
-var objTarget = refPara.target.style.color = "red"; (the practical example of *syntax written one line above)
-someCustomParameterToBeModified.objTarget...DO SOME THINGS... (REQUIRE DEEPER PRACTICS TO FINISH SYNTAX)
+var objTarget = refPara.[eventProperty]; // objTarget is now in a referance with event Object | [eventPropery] is not a part of syntax!
+var objTarget = refPara.target.style.color = "red";
+objTarget = herebyInstertEDParameterBeModified2020.[eventProperty];
 } */
 
 // 2.2 step _if we DO NOT want to apply eventObject methods and properties (MEANT FOR NO eventDelegation)
@@ -32,7 +32,7 @@ someCustomParameterToBeModified.objTarget...DO SOME THINGS... (REQUIRE DEEPER PR
 which is in reference with some HTML element being affected in nearly future...  
 } */
 
-// 2.2.2 _if eHandler has someParameters
+// 2.2.2 _if eHandler has someParameters but eventDelegation is disabled
 /* function eHandler() {
 /* ...DO SOME THINGS for JSvariable 
 which is in reference with some HTML element being affected in nearly future... 
@@ -46,8 +46,8 @@ which is in reference with some HTML element being affected in nearly future...
 // 1.1 step _if eHandler of eListner has someParameters AND we want to apply eventDelegation
 // variable.addEventListener('event', function (refPara) { eHandler (refPara, 10); }, false);
 
-// 1.1 step _if eHandler of eListner has someParameters BUT we DO NOT want to apply eventDelegation
-// variable.addEventListener('event', function () { eHandler (someCustomParamter); }, false);
+// 1.2 step _if eHandler of eListner has someParameters BUT we DO NOT want to apply eventDelegation
+// variable.addEventListener('event', function (herebyInsertSomeParameter2019) { eHandler (someCustomParamter); }, false);
 // [STEP 1 ENDS UP HERE]
 
 // EVENT OBJECT IS CREATED AND USED ONLY FOR EVENT DELEGATION
