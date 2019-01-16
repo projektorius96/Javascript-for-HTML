@@ -14,6 +14,12 @@
 
 // WHEN PART A is COMPLETED we HAVE TO FOLLOW PART B
 
+//
+
+// EVENT OBJECT IS CREATED AND USED ONLY FOR EVENT DELEGATION TO BE PRESENTED
+
+//
+
 // PART B (see below)
 // .addEventListener (a.k.a eListener) + function eHANDLER = Event Object (see below steps 1 and 2 (2.1 and 2.2))
 
@@ -21,7 +27,7 @@
 // 2.1 step _if we want to apply eventObject FOR eventDelegation (example [object Window])
 /* function eHandler(eventParameterGoes1st) {
 var objTarget = eventParameterGoes1st.target;
-objTarget.body.style.backgroundColor = "red";}
+objTarget.style.backgroundColor = "red";}
 
 var variableWin = this;
 
@@ -53,5 +59,3 @@ which is in reference with some HTML element being affected in nearly future...
 // 1.2 step _if eHandler of eListner has someParameters BUT we DO NOT want to apply eventDelegation
 // variable.addEventListener('event', function (herebyInsertSomeParameter2019) { eHandler (someCustomParamter); }, false);
 // [STEP 1 ENDS UP HERE]
-
-// EVENT OBJECT IS CREATED AND USED ONLY FOR EVENT DELEGATION
