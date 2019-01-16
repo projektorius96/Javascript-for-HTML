@@ -18,11 +18,15 @@
 // .addEventListener (a.k.a eListener) + function eHANDLER = Event Object (see below steps 1 and 2 (2.1 and 2.2))
 
 // [STEP 2 START HERE]
-// 2.1 step _if we want to apply eventObject methods and properties (MEANT FOR eventDelegation)
-/* function eHandler(refPara, someCustomParameterToBeModified) {
-var objTarget = refPara.[eventProperty]; // objTarget is now in a referance with event Object | [eventPropery] is not a part of syntax!
-var objTarget = refPara.target.style.color = "red";
-objTarget = herebyInstertEDParameterBeModified2020.[eventProperty];
+// 2.1 step _if we want to apply eventObject FOR eventDelegation (example [object Window])
+/* function eHandler(eventParameterGoes1st) {
+var objTarget = eventParameterGoes1st.target;
+objTarget.body.style.backgroundColor = "red";}
+
+var variableWin = this;
+
+variableWin.addEventListener('mouseover', function (eventParameterGoes1st) { 
+eHandler (eventParameterGoes1st); }, false);
 } */
 
 // 2.2 step _if we DO NOT want to apply eventObject methods and properties (MEANT FOR NO eventDelegation)
