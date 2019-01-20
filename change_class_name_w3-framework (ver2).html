@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+<style>
+/*
+CSS
+*/
+</style>
+</head>
+<body>
+    <h1 class="w3-*" id="demo2">This is a Heading</h1>
+    <button onclick="myFunction();">Change class</button>
+<script>
+function myFunction() {
+    var x = document.getElementById("demo2");
+    if (x.className.indexOf("w3-yellow") == -1) {
+        x.className += " w3-yellow"; /* "WHITEspaceW3-yellow" */
+    } else {
+        x.className = x.className.replace("w3-yellow", "");
+    }
+}
+</script>
+</body>
+</html>

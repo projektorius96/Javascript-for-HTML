@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+    <style>
+/* CSS */
+    </style>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+function getSize(width, height, depth) {
+var area = width * height;
+var volume = width * height * depth;
+var sizes = [area, volume];
+return sizes;
+}
+
+/*  
+document.getElementById("demo").innerHTML = getSize(3, 2, 3)[0]; */ /* this line returns seperated product of area */
+
+/*
+var volumeResult = getSize(3, 2, 3)[1];
+document.getElementById("demo").innerHTML = getSize(3, 2, 3)[1]; */ /* this line returns seperated product of volume */
+
+document.getElementById("demo").innerHTML = getSize(3, 2, 3); /* this line returns both i.e a product of area and a product of volume by var size = [area, volume] return sizes; */
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+    <style>
+/* CSS */
+    </style>
+</head>
+<body>
+<html>
+<body>
+<script>
+    /* Lexical example
+    function parentFn () {
+    var a = 5;
+    var b = 6;
+    function childFn () {
+        return a + b;
+    } 
+    return add();
+}
+    */
+    
+    function getSum () {
+    var a = 5;
+    var b = 6;
+    function add () {
+        return a + b;
+    } 
+    return add();
+}
+console.log(getSum());
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+/* CSS */
+</style>
+</head>
+<body>
+<h1>Object constructor</h1>
+<p id="HTMLcontent"></p>
+<script>
+// function used as a template for Object constructor with different arguments for same/different reference i.e reference = variable linked with some HTMLcontent
+function SameFnName(paraString1, paraNumber2, paraNumber3) {
+    this.anyName1 = paraString1;
+    this.anyName2 = paraNumber2;
+    this.anyName3 = paraNumber3;
+    this.anyNameMethod = function () {
+        return (this.anyName2 + this.anyName3) - 3;
+    };
+}
+    // Object constructor :after keyword new SameFnName constructor name MUST MATCH the function name defined above; 
+    var constructObj = new SameFnName('This "string" sentence counted as first argument + ', 2, 3);
+    
+    // Argument passed in order to change place of the parameters had defined inside the SameFnName(parameters) function before.
+    var arg_Of_constructObj = constructObj.anyName1;
+    arg_Of_constructObj += constructObj.anyNameMethod() + " other arguments were used, in total:" + "<br>" + "String + Number + Number = 3 arguments were used.";
+    /* console.log(arg_Of_constructObj); */
+    var elName = document.getElementById("HTMLcontent");
+    elName.innerHTML = arg_Of_constructObj;
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="myDiv">Show / Hide DIV element by toggling me!</div>
+
+<button type="button" onclick="myFunction()">Toggle me</button>
+
+<script>
+// https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp 
+// TOGGLE HIDE/SHOW tutorial with DOM node visibility
+//this code based on tut link shown above 
+function myFunction() {
+var x = document.getElementById("myDiv");
+    if (x.style.visibility === "hidden") {
+        x.style.visibility = "visible";
+    } else {
+        x.style.visibility = "hidden";
+    }
+}
+</script>
+
+</body>
+</html>

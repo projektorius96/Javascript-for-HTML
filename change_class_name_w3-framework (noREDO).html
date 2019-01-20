@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+<style>
+/*
+https://stackoverflow.com/questions/195951/change-an-elements-class-with-javascript
+http://clubmate.fi/javascript-adding-and-removing-class-names-from-elements/#Add_class_Using_className
+https://alligator.io/js/classlist/
+*/
+</style>
+</head>
+<body>
+
+<h1 id="demo1" class="change">This is a Heading</h1>
+
+<button onclick="myFunction();">Change class</button>
+   
+<script>
+function myFunction () {
+var classChanged = document.getElementById("demo1");
+classChanged.classList.add("w3-yellow");
+/* classChanged.classList.remove(""); */
+    }
+    </script>
+</body>
+</html>
