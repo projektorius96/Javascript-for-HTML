@@ -1,0 +1,48 @@
+// All credits to W3 school team (link below to the tut):
+// https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body>
+
+<h2 class="w3-center">Manual Slideshow</h2>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="img_snowtops.jpg" style="width:100%"><!-- slideIndex = 1 -->
+  <img class="mySlides" src="img_lights.jpg" style="width:100%"><!-- slideIndex = 2 -->
+  <img class="mySlides" src="img_mountains.jpg" style="width:100%"><!-- slideIndex = 3 -->
+  <img class="mySlides" src="img_forest.jpg" style="width:100%"><!-- slideIndex = x.length, when x.length = 4 -->
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+var slideIndex = 1; // slideIndex1 means first slide will be shown when window loads
+showDivs(slideIndex); // showDivs(1) as argument 
+
+function plusDivs(n) { // if plusDivs(+1)        | when n=2
+  showDivs(slideIndex += n); //  if plusDivs(-1) | when n=0
+}
+
+function showDivs(n) { // as default (before any iteractions of user being made) n = slideIndex, when slideIndex = 1;
+  var i;
+  var x = document.getElementsByClassName("mySlides"); // x will represent slideIndex in
+  if (n > x.length) {slideIndex = 1} // if slideIndex = 5, when slideIndex = 1, because we have only 4pictures
+  if (n < 1) {slideIndex = x.length} // if slideIndex = 0, when slideIndex = 4 i.e. forest picture, because forest 4th picture = x.length
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; // slideIndex = 2, slideIndex = 3. slideIndex 4 .style.display = "none"; same as = "DO NOT SHOW";
+  }
+  x[slideIndex-1].style.display = "block";  /* slideIndex 1-1 = 0, it means i = 0, when i = 0 it's same as slideIndex = 1 i.e. i of FOR loop
+  which starts at 0 represents firstSlide which index is slideIndex = 1 */
+}
+</script>
+
+</body>
+</html>
