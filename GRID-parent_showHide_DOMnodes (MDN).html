@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  
+    <!-- -->
+    
+    <script type="text/javascript">
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+        // https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+        // HTML DIV element ShowHide Toggle function
+function myFunction() {
+var x = document.getElementById("myDiv");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+    </script>
+    
+     <!-- -->
+    
+  <style>
+/* CSS Selector List Referance: ......................*/
+/* https://www.w3schools.com/CSSref/css_selectors.asp */
+/* https://css-tricks.com/multiple-class-id-selectors */
+/* https://www.w3schools.com/css/css_rwd_grid.asp */
+.container-grid {background-color: #f0a0fa;
+      width: 100%;} /* marks up wrapper/container itself in yellow colour */
+
+div {
+display:grid;
+gap: 10px 10px;
+grid-template-columns: 1fr 1fr 1fr 1fr; /* four 1fr means each div takes same proportion of viewport */
+box-sizing: border-box; /* make sure padding + border included in whole box size */
+/* border: 2px solid black; */
+background-color: #eddbdb;
+}
+      
+div.container-grid > div.list {
+display: block; /* to prevent div of projecting outside grid layout due margin setting below */
+margin: 8px;
+padding: 20px;
+}
+
+/* RWD mechanism shown below how container-grid changes to list-grid be-like structure */
+
+@media (max-width: 800px) {
+  div {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/*  .myClass ::if hide but take up space {visibility: hidden} | if hide (without) taking up space {display: node|block} */
+  </style>
+
+</head>
+<body>
+<!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout -->
+    <div></div>
+<div class="container-grid">
+  <div class="list">LETS</div>
+  <div class="list">DO</div>
+  <div class="list">SOME</div>
+  <div class="list">CODING</div>
+  <div id="myDiv" class="list">ShowHide</div>
+</div>
+<button type="button" onclick="myFunction()">Toggle me</button>
+</body>
+</html>
