@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.myDiv {
+    border: 1px solid black;
+    background-color: yellow;
+    }
+</style>
+</head>
+<body>
+
+<h1 class="myDiv">HighLight me</h1> <!-- [0] -->
+<h2 class="myDiv">HighLight me</h2> <!-- [1] -->
+<h3 class="myDiv">HighLight me</h3> <!-- [2] -->
+
+<script>
+    
+var myPointer = document.querySelectorAll(".myDiv"); // reference to array-like object (NodeList) which (myPointer)...
+// ...in this case contains three elements of class="myDiv"
+// if call: myPointer[0] in console output we get: h1.myDiv so it's zero based array-like object (NodeList)
+
+// With ***fatArrow ()=> syntax*** 
+// Remove comments from lines 26-27 and comment out 31-32 lines to get alternative result without fatArow as option
+// syntax: myVariable.forEach((e) => e.addEventListener("eventType", () => eHandlerAsCallbackFnName(FnHandlerEventParameter));
+// myPointer.forEach((e) => e.addEventListener("mouseover", (e) => mouseOver(e, "blue"))); // apply mouseover event forEach element of class="myDiv" 
+// myPointer.forEach((e) => e.addEventListener("mouseout", (e) => mouseOut(e, "black"))); // apply mouseout event forEach element of class="myDiv"
+
+// Without ***fatArrow ()=> syntax***   
+// syntax: myVariable.forEach(function(event) { return event.addEventListener("eventType", function() {eHandlerAsCallbackFnName(FnHandlerEventParameter)} ); } )
+myPointer.forEach( function(e) { return e.addEventListener("mouseover", function(e) { mouseOver(e, "blue"); } ) } );
+myPointer.forEach( function(e) { return e.addEventListener("mouseout", function(e) { mouseOut(e, "black"); } ) } );
+
+function mouseOver(e, addCustomColor) {
+// e.style.color = "red";
+e.target.style.color = addCustomColor; // later change this line with callback invocation
+}
+
+function mouseOut(e, addCustomColor) {
+// e.style.color = "black";
+e.target.style.color = addCustomColor; // later change this line with callback invocation
+}
+
+</script>
+</body>
+</html>
