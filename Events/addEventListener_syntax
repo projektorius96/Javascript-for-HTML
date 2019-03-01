@@ -1,0 +1,16 @@
+// FIRST WE ALWAYS HAVE TO GAIN ACCESS to HTML via JS built-in methods such as document.getElementById()...
+//... in order to succeed this, we have to follow part A and part B afterwards
+
+// PART A (see below)
+// ...addEventListener syntax (for JS-side, GOOD PRACTICE):
+// JSvariable.addEventLisener('event','functionName',[Boolean]);
+    // let JSvariable = document.getElementbyId('htmlElementOneSelected')
+    // JSvariable.addEventLisener('event','functionName',[Boolean]);
+
+// PART B (see below)
+// ...addEventListener syntax (for HTML-side, BAD PRACTICE)
+// HTMLelement.addEventListener('event','functionName',[Boolean]);
+    // document.getElementbyId('htmlElementOneSelected').addEventLisener('event','functionName',[Boolean]);
+    // NOTICE: NO JSvariable.getElem... NEDEEDED tho.
+
+// Conclusion: PART A REPRESENTS GOOD PRACTICE syntax add ways of eListener attachments
