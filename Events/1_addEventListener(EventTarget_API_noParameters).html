@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="myDiv">CLICK ME TO TEST</div>    
+
+<script>
+    
+var ref = document.getElementById("myDiv"); // single DIV accessing mode (method)
+ref.addEventListener('click', eHandler); // no parameters for eHandler
+
+// (e) as event object parameter which represents all information about specific event trigerred to HTML element
+function eHandler(e) {
+
+// [instead of two lines below...]
+// var refE = e.target;
+// refE.style.color = "red";
+// [... do this line presented below at once]
+e.target.style.color = "red";
+}
+    
+</script>
+</body>
+</html>
