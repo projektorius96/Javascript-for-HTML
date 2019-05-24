@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<!-- if bootstrap is used <link rel=¨stylesheet¨ type=¨text/css¨ href=¨[url_bootstrap_theme]¨> this line must be at the topmost -->
+<!-- if css is in the same folder as html <link rel=¨stylesheet¨ type=¨text/css¨ href=¨[file_name].css¨> -->
+<!-- if css is one folder forward [subfolder of parent html folder] <link rel=¨stylesheet¨ type=¨text/css¨ href=¨..\css\mystyle.css¨> -->
+<!-- <style>[for internal styling]</style> -->
+</head>
+<body id="parent-content">
+<button>Click me to get alert box being displayed</button>
+<script>
+var b = document.querySelector("button"); 
+// b.setAttribute("disabled", ""); use this code for making a button being disabled //
+b.setAttribute("onclick", "myFn()"); // see console for result being didplayed
+function myFn() {alert("button was clicked!")}
+</script>
+<!-- if js is one folder forward [subfolder of parent html folder] <script src="..\[folder_name]\[file_name].js"></script> -->
+<!-- if qjuery CDN is about to be used <script src="[url_of_the_js_library]></script> -->
+    <!-- <script>[for internal scripting (if bootstrap must be at the topmost!)]</script> -->
+    <!-- <script>[for internal scripting (if any_other must be below bootstrap!)]</script> -->
+</body>
+</html>
