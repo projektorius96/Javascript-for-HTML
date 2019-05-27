@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<!-- if bootstrap is used <link rel=¨stylesheet¨ type=¨text/css¨ href=¨[url_bootstrap_theme]¨> this line must be at the topmost -->
+<!-- if css is in the same folder as html <link rel=¨stylesheet¨ type=¨text/css¨ href=¨[file_name].css¨> -->
+<!-- if css is one folder forward [subfolder of parent html folder] <link rel=¨stylesheet¨ type=¨text/css¨ href=¨..\css\mystyle.css¨> -->
+<!-- <style>[for internal styling]</style> -->
+<style>
+.democlass {
+  background-color:  yellow;
+}
+</style>
+</head>
+<body id="parent-content">
+<div id="child-content"></div>
+<script>
+function constructorDOM(outputTagName, someText, outputTag, className, classValue) {
+var nodeReference = document.getElementsByTagName(outputTagName)[0]; // get reference to <div id="child-content"></div>
+var nodeTypeElementText = document.createTextNode(someText); // initialize some text variable
+nodeReference.appendChild(nodeTypeElementText); // set some text variable to existing <div id="child-content"></div> via nodeReference variable reference
+    
+// ATTRIBUTE INITIALIZATION [OPTIONAL]
+var nodeTypeAtt = document.getElementById('child-content'); // grant access for attribute variable reference
+/*
+var att = document.createAttribute("class"); // var att creates class="";
+att.value = "democlass"; // adds "democlass" as the result var att looks like that: class="democlass"
+*/
+nodeTypeAtt.setAttribute(className, classValue);
+
+}
+
+constructorDOM('div','BLOCK-ELEMENT IS HIGHLIGHTED', 'child-content', "class", "democlass");
+</script>
+<!-- if js is one folder forward [subfolder of parent html folder] <script src="..\[folder_name]\[file_name].js"></script> -->
+<!-- if qjuery CDN is about to be used <script src="[url_of_the_js_library]></script> -->
+    <!-- <script>[for internal scripting (if bootstrap must be at the topmost!)]</script> -->
+    <!-- <script>[for internal scripting (if any_other must be below bootstrap!)]</script> -->
+</body>
+</html>
