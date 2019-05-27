@@ -16,6 +16,7 @@
 <div id="child-content"></div>
 <script>
 function constructorDOM(outputTagName, someText, outputTag, className, classValue) {
+// Version 2 references to existing nodeElement instead of creating one
 var nodeReference = document.getElementsByTagName(outputTagName)[0]; // get reference to <div id="child-content"></div>
 var nodeTypeElementText = document.createTextNode(someText); // initialize some text variable
 nodeReference.appendChild(nodeTypeElementText); // set some text variable to existing <div id="child-content"></div> via nodeReference variable reference
