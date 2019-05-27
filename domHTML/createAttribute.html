@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<!-- if bootstrap is used <link rel=¨stylesheet¨ type=¨text/css¨ href=¨[url_bootstrap_theme]¨> this line must be at the topmost -->
+<!-- if css is in the same folder as html <link rel=¨stylesheet¨ type=¨text/css¨ href=¨[file_name].css¨> -->
+<!-- if css is one folder forward [subfolder of parent html folder] <link rel=¨stylesheet¨ type=¨text/css¨ href=¨..\css\mystyle.css¨> -->
+<!-- <style>[for internal styling]</style> -->
+<style>
+.democlass {
+  background-color:  yellow;
+}
+</style>
+</head>
+<body id="parent-content">
+<div id="child-content"></div>
+<script>
+function constructorDOM(tagName, someText, outputTag, className, classValue) {
+var nodeTypeElement = document.createElement(tagName); // create <p>
+var nodeTypeElementText = document.createTextNode(someText); // please insert text 'tested'
+nodeTypeElement.appendChild(nodeTypeElementText); // this line inserts nodeTypeElementText inside nodeTypeElement
+/* var element = document.getElementById("body-content"); this line shows alternative way of outputting reference result */
+var output = document.getElementById(outputTag); // get reference to h1
+output.appendChild(nodeTypeElement); // select h1 as the first parent member of outputTag in order to output result inside of it */
+    
+// ATTRIBUTE INITIALIZATION [OPTIONAL]
+var nodeTypeAtt = document.getElementsByTagName("DIV")[0]; // grant access for attribute variable reference
+/*
+var att = document.createAttribute("class"); // var att creates class="";
+att.value = "democlass"; // adds "democlass" as the result var att looks like that: class="democlass"
+*/
+nodeTypeAtt.setAttribute(className, classValue);
+
+}
+
+constructorDOM('p', 'BLOCK-ELEMENT IS HIGHLIGHTED', 'child-content', "class", "democlass");
+</script>
+<!-- if js is one folder forward [subfolder of parent html folder] <script src="..\[folder_name]\[file_name].js"></script> -->
+<!-- if qjuery CDN is about to be used <script src="[url_of_the_js_library]></script> -->
+    <!-- <script>[for internal scripting (if bootstrap must be at the topmost!)]</script> -->
+    <!-- <script>[for internal scripting (if any_other must be below bootstrap!)]</script> -->
+</body>
+</html>
