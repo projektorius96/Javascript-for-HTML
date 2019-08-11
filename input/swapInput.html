@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul><button onclick="myFunction()">Swap inputs</button>
+<input type="text" name="synValue" value="A">
+<input type="text" name="oppValue" value="Z">  
+</ul>
+
+<script>
+    // this function's conntent first input makes as lastChild and lastChild consequently becomes firstChild of unordered list: e.g function takes advantage then opposite formula result is in need to be given
+function myFunction() {
+  var d = document.createDocumentFragment();
+  d.appendChild(document.getElementsByTagName("INPUT")[0]);
+  document.getElementsByTagName("UL")[0].appendChild(d);
+}
+</script>
+
+</body>
+</html>
