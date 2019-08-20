@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +10,12 @@
 <body id="parent-content">
 <button>Click me to get alert box being displayed</button>
 <script>
+function  myFn() {alert("button was clicked!")}
+// addFunction-to-Button
 var b = document.querySelector("button"); 
 // b.setAttribute("disabled", ""); use this code for making a button being disabled //
-b.setAttribute("onclick", "myFn()"); // see console for result being didplayed
-function myFn() {alert("button was clicked!")}
+/* b.addEventListener("click", () => alert("button was clicked!")); addEventListener as setAttribute to attach static function to Button */
+b.setAttribute("onclick", "myFn()"); // setAttribute attaches static function to Button
 </script>
 <!-- if js is one folder forward [subfolder of parent html folder] <script src="..\[folder_name]\[file_name].js"></script> -->
 <!-- if qjuery CDN is about to be used <script src="[url_of_the_js_library]></script> -->
