@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+    <style>
+/* CSS */
+    </style>
+</head>
+<body>
+<ul>
+    <!-- whitespace comment text node -->
+  <li>firstElementChild[0Index]</li>
+    <!-- whitespace comment text node -->
+  <li>secondElementChild[1Index]</li>
+    <!-- whitespace comment text node -->
+  <li>thirdElementChild[2Index]</li>
+    <!-- whitespace comment text node -->
+</ul>
+<script>
+const todoList = document.querySelector('ul');
+const replaceListing = document.createElement('li');
+replaceListing.textContent = "changedElementChild";
+todoList.replaceChild(replaceListing, todoList.children[2]);
+</script>
+</body>
+</html>
