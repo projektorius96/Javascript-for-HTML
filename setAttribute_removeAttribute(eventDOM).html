@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.someStyle {background:orange; padding:24px; font-size:24px;}
+</style>
+</head>
+<body>
+<button onclick="setAtt()">Add</button>
+<button onclick="remAtt()">Remove</button>
+<h2>Watch browser console -> Element section</h2>
+<script>
+function setAtt() {
+document.getElementsByTagName("H2")[0].setAttribute("class","someStyle");
+}
+
+function remAtt() {
+document.getElementsByTagName("H2")[0].removeAttribute("class");
+}
+</script>
+</body>
+</html>
