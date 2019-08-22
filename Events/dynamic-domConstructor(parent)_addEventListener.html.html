@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<!-- if bootstrap is used <link rel=¨stylesheet¨ type=¨text/css¨ href=¨[url_bootstrap_theme]¨> this line must be at the topmost -->
+<!-- if css is in the same folder as html <link rel=¨stylesheet¨ type=¨text/css¨ href=¨[file_name].css¨> -->
+<!-- if css is one folder forward [subfolder of parent html folder] <link rel=¨stylesheet¨ type=¨text/css¨ href=¨..\css\mystyle.css¨> -->
+<!-- <style>[for internal styling]</style> -->
+</head>
+<body id="parent-content"><!DOCTYPE html>
+<html>
+<head><title>Page Title</title></head>
+<body>
+<button id="btn">Apply DOM</button>
+<h1></h1><!-- JS RESULT GOES HERE -->
+<script>
+
+var refButton = document.getElementById("btn");
+var refElement = document.getElementsByTagName("H1")[0]; //output TAG
+    
+function constructorDOM(e, tagName, someText, outputTag) {
+refElement = e.target; // as far as I am concerned this function scope result will be targeted to refElement and will be shown in browser
+var nodeTypeElement = document.createElement(tagName); // create <p>
+var nodeTypeElementText = document.createTextNode(someText); // please insert text 'addEventListener has been passed'
+nodeTypeElement.appendChild(nodeTypeElementText); // this line inserts nodeTypeElementText inside nodeTypeElement
+var output = document.getElementsByTagName(outputTag); // get reference to h1
+output[0].appendChild(nodeTypeElement); // select h1 as first parent outputTag in order to output result without an error
+}
+
+refButton.addEventListener("click", function(e) { constructorDOM(e, 'p', 'addEventListener has been passed', 'h1') }, false);
+
+</script>
+</body>
