@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<!-- if bootstrap is used <link rel=¨stylesheet¨ type=¨text/css¨ href=¨[url_bootstrap_theme]¨> this line must be at the topmost -->
+<!-- BEWARE: if inline css used must put style.css in subfolder in reference to index.html otherwise migth not work
+<!-- if css is one folder forward [subfolder of parent index.html folder] <link rel=¨stylesheet¨ type=¨text/css¨ href=¨..\css\mystyle.css¨>  -->
+<style>
+    html, body {
+    overflow-x: hidden; /* remove horizontal scroll */
+    background-color: black;
+    margin-left: 0px;
+    /* padding: 0; */
+    position: absolute;
+    }
+    div {
+    background-color: white;
+    width: 100vw;
+    height: 200vh;
+    }
+    div.fixed {
+    position: fixed;
+    top: 0;
+    }
+    input#cx {background-color: #ff6464;
+    box-sizing: border-box;
+    padding: 20px;
+    }
+    input#cy {background-color: yellow;
+    box-sizing: border-box;
+    padding: 20px;
+    }
+    </style>
+</head>
+<body id="body">
+<div class="fixed">
+<!-- pageX: <input type="text" id="cx"/> -->
+<!-- pageY: <input type="text" id="cy"/> -->
+</div>
+<div></div>
+<script>
+function showPosition(e) {
+  e.value = console.log('X coordinate: ' + e.pageX); // cx.value <= eventRegisteredData [X]
+  e.value = console.log('Y coordinate: ' + e.pageY); // cy.value <= eventRegisteredData [Y]
+}
+var el = document.getElementById("body");      // Get body Element
+el.addEventListener('click', function (e) { 
+showPosition (e); }, false); // Get body Element position being updated depending on X / Y axis being mousemoved along to.
+    </script>
+</body>
+</html>
