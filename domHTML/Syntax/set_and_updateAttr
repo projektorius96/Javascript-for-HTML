@@ -1,0 +1,11 @@
+var element = document.getElementById("demo");
+
+var id = element.attributes.getNamedItem("id").nodeValue;
+
+console.log(id); // "demo"
+
+element.attributes["id"].nodeValue = "newDemo"; // "newDemo"
+
+var newId = element.getAttributeNode("id").value; // finds out value of id after update
+
+console.log(newId); // newDemo
