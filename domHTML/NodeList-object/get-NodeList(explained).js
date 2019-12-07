@@ -48,14 +48,15 @@ checkAnyNodes[0].childNodes.item(0).textContent
 // More information about ["↵    "]: https://stackoverflow.com/questions/21572938/what-is-the-character-in-chrome-console
 // BEWARE: Comment IT IS NOT A WHITESPACE itself. IF COMMENT would be practically removed, but theoretically would stay in our mind that could be considered as whitespace
 
+/* ========================================================================================================================================================================== */
 
-// STEP 2.1: Get different ways to access NodeList array-like object in order to modify it later on if needed.
+// STEP 2.2: Get different ways to access NodeList array-like object in order to modify it later on if needed.
 
 var checkAnyParentNodes = document.body.parentNode;
 // __proto__: HTMLHtmlElement
 
 checkAnyParentNodes.innerHTML;
-// (A) Console output: we get all static HTML mirror.
+// (A) Console output: we get all static HTML mirror
 
 // (B) Other way to output all .innerHTML as [object NodeList] is a line of code below:
 var getNodeListRef = document.querySelectorAll("*"); // "*" is a CSS selector that selects all elements
