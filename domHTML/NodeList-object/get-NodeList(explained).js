@@ -62,3 +62,24 @@ checkAnyParentNodes.innerHTML;
 var getNodeListRef = document.querySelectorAll("*"); // "*" is a CSS selector that selects all elements
 getNodeListRef // Console output:  [html, head, body, ul, li, li, li]
 
+// Provide @@iterator interface
+var nextOne = getNodeListRef.values();
+/*
+nextOne.next();
+{value: html, done: false}
+nextOne.next();
+{value: head, done: false}
+nextOne.next();
+{value: body, done: false}
+nextOne.next();
+{value: ul, done: false}
+nextOne.next();
+{value: li, done: false}
+nextOne.next();
+{value: li, done: false}
+nextOne.next();
+{value: li, done: false}
+nextOne.next();
+{value: undefined, done: true}
+*/
+
