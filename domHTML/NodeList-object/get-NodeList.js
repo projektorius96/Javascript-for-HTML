@@ -6,11 +6,11 @@ and choose a NodeList as array-like object to work with and apply DOM methods to
 <body>
 <ul><!-- REMOVE THIS COMMENT TO BE A WHITESPACE MADE BY ENTER KEY -->
     <!-- comment #text node -->
-  <li>firstElementChild[0Index]</li>
+  <li>firstElementChild[HTMLcollection.children[0]]</li>
     <!-- comment #text node -->
-  <li>secondElementChild[1Index]</li>
+  <li>secondElementChild[HTMLcollection.children[1]]</li>
     <!-- comment #text node -->
-  <li>thirdElementChild[2Index]</li>
+  <li>thirdElementChild[HTMLcollection.children[2]]</li>
     <!-- comment #text node -->
 </ul>
 </body>
@@ -40,13 +40,12 @@ checkAnyNodes[0].children
 // It's not a part of NodeList we are currently working with but HtmlCollection property
 */
 
+checkAnyNodes[0].childNodes
+// Console output: NodeList(15) [text, comment, text, li, text, comment, text, li, text, comment, text, li, text, comment, text]
+// what is [text]::before [li]??? See explanation below:
+
 checkAnyNodes[0].childNodes.item(0).textContent
 // Console output: "↵    " . Be noticed that ["↵    "] is considered as [text] inside .html BUT ACTUALLY it's a new line made by ENTER key
 // In order to get rid of ["↵    "] withing html content we should define content itself in sementically minified in-line way withoud ENTER keys pressed
 // More information about ["↵    "]: https://stackoverflow.com/questions/21572938/what-is-the-character-in-chrome-console
 // BEWARE: Comment IT IS NOT A WHITESPACE itself. IF COMMENT would be practically removed, but theoretically would stay in our mind that could be considered as whitespace
-
-/*
-checkAnyNodes[0].childNodes
-// Console output: NodeList(15) [text, comment, text, li, text, comment, text, li, text, comment, text, li, text, comment, text]
-*/
