@@ -24,7 +24,7 @@ checkAnyNodes.toLocaleString(); // double check if it's [object NodeList] we are
 checkAnyNodes.forEach((index, item) => {console.log(index, item)}); // iterate over the NodeList we have
 // Console output of the above code: <ul>...</ul> as iteration result we get 0, hereby 0 means there are only one unordered list with listed items within.
 
-// STEP 2.1: Get different ways to access array-like object in order to modify it later on if needed.
+// STEP 2.1: Get different ways to access HTMLcollection array-like object in order to modify it later on if needed.
 
 checkAnyNodes[0].innerHTML
 /* We get all stuff which is inside <UL> including white space. It's important to consider white space whilst working with NodeList
@@ -49,11 +49,15 @@ checkAnyNodes[0].childNodes.item(0).textContent
 // BEWARE: Comment IT IS NOT A WHITESPACE itself. IF COMMENT would be practically removed, but theoretically would stay in our mind that could be considered as whitespace
 
 
-// STEP 2.2: Get different ways to access array-like object in order to modify it later on if needed.
+// STEP 2.1: Get different ways to access NodeList array-like object in order to modify it later on if needed.
 
 var checkAnyParentNodes = document.body.parentNode;
 // __proto__: HTMLHtmlElement
 
 checkAnyParentNodes.innerHTML;
-// Console output: we get all static HTML mirror.
+// (A) Console output: we get all static HTML mirror.
+
+// (B) Other way to output all .innerHTML as [object NodeList] is a line of code below:
+var getNodeListRef = document.querySelectorAll("*"); // "*" is a CSS selector that selects all elements
+getNodeListRef // Console output:  [html, head, body, ul, li, li, li]
 
