@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<!-- if bootstrap is used <link rel=¨stylesheet¨ type=¨text/css¨ href=¨[url_bootstrap_theme]¨> this line must be at the topmost -->
+<!-- if css is in the same folder as html <link rel=¨stylesheet¨ type=¨text/css¨ href=¨[file_name].css¨> -->
+<!-- if css is one folder forward [subfolder of parent html folder] <link rel=¨stylesheet¨ type=¨text/css¨ href=¨..\css\mystyle.css¨> -->
+<!-- <style>[for internal styling]</style> -->
+<style>
+    body {
+          background-color: #b9ffcc;
+          overflow: visible;
+          margin: auto 0;
+    }
+    
+    article {
+             background-color: #ffb3b3;
+             box-sizing: border-box;
+             width: 1536px; /* window.innerHeight */
+             height: 754px; 
+    }
+    </style>
+</head>
+<body>
+<article>
+</article>
+<script>
+var wViewport = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+var hViewport = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+console.log(wViewport); // width = 1536px
+console.log(hViewport); // height = 754 px
+    </script>
+</body>
+</html>
