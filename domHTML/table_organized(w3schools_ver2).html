@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<table id="myTable">
+</table>
+
+<p>Click the button to create a TBODY element (and a TR and a TD).</p>
+
+<button onclick="myFunction()">Try it</button>
+<!-- https://stackoverflow.com/questions/3065342/how-do-i-iterate-through-table-rows-and-cells-in-javascript [INFO ON HOW TO ITERATE OVER ROWS AND CELLS] -->
+<script>
+    function myFunction(endValueOfIterator) {
+    var i, table, tBODY, tROW, tDATA;
+    // A MUST STEP TO DO: create first non-null table to get rid of errors by SELF INVOKED FUNCTION
+    
+    (function() {
+        this.tBODY = document.createElement("TBODY"); // table instantiation (just for the first time)
+        this.tROW = document.createElement("TR"); // (just for the first time)
+        this.tBODY.appendChild(this.tROW);
+        document.getElementById("myTable").appendChild(this.tBODY);
+        
+           } ()); 
+       // table = document.getElementById("mytab1");
+        /*
+for (i = 0, tROW; tROW = table.rows[i] && i < endValueOfIterator; i++) 
+
+{
+  tBODY = document.createElement("TBODY"); // table instantiation
+  tROW = document.createElement("TR");
+  tDATA = document.createElement("TD");
+  tDATA.innerText = "CLONE FIRST VIA CODE, THEN CHANGE VIA USER-SIDE"
+  tROW.appendChild(tDATA);
+  tBODY.appendChild(tROW);
+  document.getElementById("myTable").appendChild(tBODY);
+}
+ */       
+}
+
+    /* Within console after function myFunction being invoked, copy-paste:
+    
+myTable.tBodies[0].children[0].cells[0]
+// <td>A table cell inside a tr inside a tbody inside a table!</td>
+var letsChange = myTable.tBodies[0].children[0].cells[0];
+letsChange.innerText = "A table textContent changed via DOM innerText";
+letsChange
+// <td>A table textContent change via DOM innerText</td>
+}
+    */
+</script>
+
+</body>
+</html>
