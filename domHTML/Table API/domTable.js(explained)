@@ -1,0 +1,20 @@
+var checkAnyNodes = document.querySelectorAll("TBODY");
+
+checkAnyNodes[0].children;
+// HTMLCollection [tr]length: 10: tr__proto__: HTMLCollection
+tBODY.insertRow(1);
+
+checkAnyNodes[0].children
+// HTMLCollection(2) [tr, tr]length: 20: tr1: trrowIndex: 1sectionRowIndex: 1cells: HTMLCollection []align: ""ch: ""chOff: ""vAlign: ""bgColor: ""title: ""lang: ""translate: truedir: ""hidden: falseaccessKey: ""draggable: falsespellcheck: trueautocapitalize: ""contentEditable: "inherit"isContentEditable: falseinputMode: ""offsetParent: table#myTableoffsetTop: 26offsetLeft: 0offsetWidth: 60offsetHeight: 0style: CSSStyleDeclaration {alignContent: "", alignItems: "", alignSelf: "", alignmentBaseline: "", all: "", …}innerText: ""outerText: ""oncopy: nulloncut: nullonpaste: nullonabort: nullonblur: nulloncancel: nulloncanplay: nulloncanplaythrough: nullonchange: nullonclick: nullonclose: nulloncontextmenu: nulloncuechange: nullondblclick: nullondrag: nullondragend: nullondragenter: nullondragleave: nullondragover: nullondragstart: nullondrop: nullondurationchange: nullonemptied: nullonended: nullonerror: nullonfocus: nullonformdata: nulloninput: nulloninvalid: nullonkeydown: nullonkeypress: nullonkeyup: nullonload: nullonloadeddata: nullonloadedmetadata: nullonloadstart: nullonmousedown: nullonmouseenter: nullonmouseleave: nullonmousemove: nullonmouseout: nullonmouseover: nullonmouseup: nullonmousewheel: nullonpause: nullonplay: nullonplaying: nullonprogress: nullonratechange: nullonreset: nullonresize: nullonscroll: nullonseeked: nullonseeking: nullonselect: nullonstalled: nullonsubmit: nullonsuspend: nullontimeupdate: nullontoggle: nullonvolumechange: nullonwaiting: nullonwheel: nullonauxclick: nullongotpointercapture: nullonlostpointercapture: nullonpointerdown: nullonpointermove: nullonpointerup: nullonpointercancel: nullonpointerover: nullonpointerout: nullonpointerenter: nullonpointerleave: nullonselectstart: nullonselectionchange: nullonanimationend: nullonanimationiteration: nullonanimationstart: nullontransitionend: nulldataset: DOMStringMap {}nonce: ""autofocus: falsetabIndex: -1enterKeyHint: ""onpointerrawupdate: nullnamespaceURI: "http://www.w3.org/1999/xhtml"prefix: nulllocalName: "tr"tagName: "TR"id: ""className: ""classList: DOMTokenList [value: ""]slot: ""attributes: NamedNodeMap {length: 0}shadowRoot: nullpart: DOMTokenList [value: ""]assignedSlot: nullinnerHTML: ""outerHTML: "<tr></tr>"scrollTop: 0scrollLeft: 0scrollWidth: 60scrollHeight: 0clientTop: 0clientLeft: 0clientWidth: 60clientHeight: 0attributeStyleMap: StylePropertyMap {size: 0}onbeforecopy: nullonbeforecut: nullonbeforepaste: nullonsearch: nullelementTiming: ""previousElementSibling: trnextElementSibling: nullchildren: HTMLCollection []firstElementChild: nulllastElementChild: nullchildElementCount: 0onfullscreenchange: nullonfullscreenerror: nullonwebkitfullscreenchange: nullonwebkitfullscreenerror: nullnodeType: 1nodeName: "TR"baseURI: "http://127.0.0.1:50514/organized_table(w3schools).html"isConnected: trueownerDocument: documentparentNode: tbodyparentElement: tbodychildNodes: NodeList []firstChild: nulllastChild: nullpreviousSibling: trnextSibling: nullnodeValue: nulltextContent: ""__proto__: HTMLTableRowElement__proto__: HTMLCollection
+
+var changedRow = tBODY.rows.length-1; // reference last row in zero based array context as changedRow null allocation
+// undefined
+
+changedRow
+// 1 hereby number 1 is index of HTMLCollection
+changedRow = document.createElement("TD"); // at the last currently null index please create null TD element
+
+changedRow.innerText = "NEW DRAFT" // please add some document.html visible content to recently added TD element
+// "NEW DRAFT"
+checkAnyNodes[0].children[1].appendChild(changedRow);
+// NEW ROW WILL BE PRESENTED within document object as visible content
