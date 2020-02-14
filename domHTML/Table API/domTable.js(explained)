@@ -18,3 +18,6 @@ changedRow.innerText = "NEW DRAFT" // please add some document.html visible cont
 // "NEW DRAFT"
 checkAnyNodes[0].children[1].appendChild(changedRow);
 // NEW ROW WILL BE PRESENTED within document object as visible content
+
+// For more:
+// https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
