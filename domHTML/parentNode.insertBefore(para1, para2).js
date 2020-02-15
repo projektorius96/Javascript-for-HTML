@@ -1,5 +1,7 @@
+// First we need to get information in NodeList way
 var refNode = document.querySelectorAll("*");
 // refNode as NodeList: [html, head, body]
+
 var beforeThisNode = document.createElement("FOOTER");
 // beforeThisNode is not appended yet
 
@@ -12,6 +14,7 @@ var currentNodeToBeAdded = document.createElement("HEADER");
 refNode[2].appendChild(currentNodeToBeAdded);
 
 let LetsInsertBefore = refNode[2].insertBefore(currentNodeToBeAdded, beforeThisNode); // [html, head, body [HEADER, footer]]
+// if used refNode[2].appendChild(currentNodeToBeAdded); as a result we would get [html, head, body [footer, header]] but this is not a part of our tutorial
 
 // let LetsInsertAFTER = refNode[2].insertBefore(currentNodeToBeAdded, beforeThisNode.nextSibling); // [html, head, body [FOOTER, header]]
 
