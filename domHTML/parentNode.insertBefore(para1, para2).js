@@ -29,7 +29,6 @@ refNodeRefreshed
 
 /*
 // document.documentElement === html && document.documentElement.parentNode === document
-document.documentElement.parentNode.children[0].appendChild(LetsInsertBefore); // MUST LINE FOR HTML CONTENT VISUALIZATION
 document.body.childNodes[0].innerHTML = "<H1>INJECTED</H1>" // swap theoretical header HTMLelement with this...
 document.body.childNodes[1].innerHTML = "<H3>INJECTED BELOW</H3>" // swap theoretical footer HTMLelement with this...
 */
