@@ -1,8 +1,8 @@
 // gives result as matrix e.g 10x10
-for(var numberOfRows = 1 ; numberOfRows < 10; numberOfRows++) {
-tBODY.insertRow(-1)[numberOfRows];
-for(let numberOfCellsWithin = 0 ; numberOfCellsWithin < 9; numberOfCellsWithin++) {
-tBODY.rows[this.numberOfRows].insertCell(-1);
+for(var theRowToStartAt = 0 ; theRowToStartAt < 10; theRowToStartAt++) {
+tBODY.insertRow(-1)[theRowToStartAt];
+for(let numberOfCellsWithinEachRow = 0 ; numberOfCellsWithinEachRow < 11; numberOfCellsWithinEachRow++) {
+tBODY.rows[this.theRowToStartAt].insertCell(-1);
 }
 }
 
