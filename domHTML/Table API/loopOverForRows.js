@@ -1,7 +1,7 @@
-for(let i = 1 ; i < 10; i++) {
-var newRow = tBODY.insertRow(-1);
-newRow[i];
+for(var numberOfRows = 1 ; numberOfRows < 10; numberOfRows++) {
+tBODY.insertRow(-1)[numberOfRows];
+for(let numberOfCellsWithin = 0 ; numberOfCellsWithin < 9; numberOfCellsWithin++) {
+tBODY.rows[this.numberOfRows].insertCell(-1);
 }
-
-tBODY.rows
-// HTMLCollection(10) [tr, tr, tr, tr, tr, tr, tr, tr, tr, tr]
+}
+// gives result as matrix e.g 10x10
