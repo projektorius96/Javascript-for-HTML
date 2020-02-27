@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<table id="myTable">
+</table>
+
+<script>
+var tBODY;
+    
+    // A MUST STEP TO DO in order to get rid of error of null
+    (function() {
+        this.tBODY = document.createElement("TBODY"); // table instantiation (just for the first time)
+        document.getElementById("myTable").appendChild(this.tBODY);
+    }());
+
+// gives result as matrix e.g 10x10
+// all explained via well ledgible variables
+for(var theRowToStartAt = 0 ; theRowToStartAt < 10; theRowToStartAt++) {
+tBODY.insertRow(-1)[theRowToStartAt];
+for(let numberOfCellsWithinEachRow = 0 ; numberOfCellsWithinEachRow < 11; numberOfCellsWithinEachRow++) {
+tBODY.rows[this.theRowToStartAt].insertCell(-1);
+}
+}
+</script>
+
+</body>
+</html>
