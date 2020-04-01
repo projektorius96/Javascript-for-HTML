@@ -10,7 +10,7 @@
 
 <script>
 function myFunction() {
-  /* in order .createDocumentFragment() to work we must have static HTML defines outside script */
+  /* in order .createDocumentFragment() to work we must have static HTML defined outside script */
   var d = document.createDocumentFragment();
   /* d must appendChild from static HTML same as document has to be referenced to variable */
   d.appendChild(document.getElementsByTagName("LI")[0]);
