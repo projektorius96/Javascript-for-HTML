@@ -13,11 +13,11 @@ function myFunction() {
   /* in order .createDocumentFragment() to work we must have static HTML defined outside script */
   var d = document.createDocumentFragment();
   /* d must appendChild from static HTML same as document has to be referenced to variable */
-  d.appendChild(document.getElementsByTagName("LI")[0]);
+  d.appendChild(document.getElementsByTagName("LI")[0]); // take it out to DocumentFragment clipboard just for temporarely
   /* d.childNodes[0].childNodes[0].nodeValue;
   Console output shows: Coffee
-     d.childNodes[0].childNodes[0].nodeValue = "Milk"; Now this line explaines why <li>Tea</li> became as first childNode, 
-     ...because we temporarely took out <li>Coffee</li> and changed it to new #text by assigning it as "Milk" below:...
+  d.childNodes[0].childNodes[0].nodeValue = "Milk"; Now this line explaines why <li>Tea</li> became as first childNode,...
+  ...because we temporarely had took out <li>Coffee</li> and changed it to new #text by assigning it as "Milk" below:...
   */
   d.childNodes[0].childNodes[0].nodeValue = "no more Coffee it's a Milk now instead"; // mentioned assignment
   document.getElementsByTagName("UL")[0].appendChild(d); // appends Milk as the last instead
