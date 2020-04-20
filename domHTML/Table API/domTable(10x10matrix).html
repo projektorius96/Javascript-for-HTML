@@ -14,7 +14,6 @@ table, th, td {
 
 <script>
 var tBODY;
-    
     // A MUST STEP TO DO in order to get rid of error of null
     (function() {
         this.tBODY = document.createElement("TBODY"); // table instantiation (just for the first time)
@@ -25,10 +24,85 @@ var tBODY;
 // all explained via well ledgible variables
 for(var theRowToStartAt = 0 ; theRowToStartAt < 10; theRowToStartAt++) {
 tBODY.insertRow(-1)[theRowToStartAt];
-for(let numberOfCellsWithinEachRow = 0 ; numberOfCellsWithinEachRow < 11; numberOfCellsWithinEachRow++) {
+for(let numberOfCellsWithinEachRow = 0 ; numberOfCellsWithinEachRow < 10; numberOfCellsWithinEachRow++) {
 tBODY.rows[this.theRowToStartAt].insertCell(-1);
 }
 }
+// A bit of playground with colors
+var myTable = document.querySelector("#myTable");
+var cSelfIterator = 0;
+for (i = 0; i < myTable.rows.length; i++) {
+// Mark self-correlation as red
+myTable.rows[i].cells[cSelfIterator++].style.backgroundColor = "red";
+}
+// A bit of playground with paddings i.e. make cells be more visible;
+var myTable = document.querySelector("#myTable");
+// var cSelfIterator = 0;
+for (i = 0; i < myTable.rows.length; i++) {
+for (j = 0; j < myTable.rows.length; j++) {
+myTable.rows[i].cells[j].style.padding = "20px";
+// myTable.rows[i].cells[cSelfIterator++].style.backgroundColor = "red";
+}
+}
+/*
+var myTable = document.querySelector("#myTable");
+// var cSelfIterator = 0;
+function invokeTable(column, color) {
+for (i = 0; i < myTable.rows.length; i++) {
+myTable.rows[i].cells[column].style.backgroundColor = color;
+}
+}
+// invokeTable(0, "yellow")
+*/
+/*
+var myTable = document.querySelector("#myTable");
+var column = -1; // as a counter for odd columns
+// var column = -2 as a counter for even columns
+function invokeTable(columnInner, color) {
+columnInner = column;
+for (i = 0; i < myTable.rows.length; i++) {
+myTable.rows[i].cells[columnInner+2].style.backgroundColor = color;
+}
+}
+
+invokeTable(0, "red")
+*/
+/*
+// A way bit of callback
+var myTable = document.querySelector("#myTable");
+function cb(index) {
+var index;
+if (invokeTable) {
+this.index++
+}
+}
+
+function invokeTable(color, index, cb) {
+cb(index);
+var color; // para color belong to this function body
+for (i = 0; i < myTable.rows.length; i++) {
+myTable.rows[i].cells[index].style.backgroundColor = color;
+}
+}
+invokeTable("green", 0, function(){return this})
+*/
+/*
+var myTable = document.querySelector("#myTable");
+var index = 0;
+function counter(index) {
+return index++;
+}
+
+function invokedTable(color, counter) {
+counter();
+var color; // para color belong to this function body
+for (i = 0; i < myTable.rows.length; i++) {
+myTable.rows[i].cells[this.index].style.backgroundColor = color;
+}
+}
+undefined
+invokedTable("yellow", function() {return this})
+*/
 </script>
 
 </body>
