@@ -44,7 +44,7 @@ myTable.rows[i].cells[j].style.padding = "20px";
 // myTable.rows[i].cells[cSelfIterator++].style.backgroundColor = "red";
 }
 }
-/*
+/* MANUALLY
 var myTable = document.querySelector("#myTable");
 // var cSelfIterator = 0;
 function invokeTable(column, color) {
@@ -54,54 +54,19 @@ myTable.rows[i].cells[column].style.backgroundColor = color;
 }
 // invokeTable(0, "yellow")
 */
-/*
+                    /*              */
+/* SEMI-MANUALLY
 var myTable = document.querySelector("#myTable");
-var column = -1; // as a counter for odd columns
-// var column = -2 as a counter for even columns
-function invokeTable(columnInner, color) {
-columnInner = column;
-for (i = 0; i < myTable.rows.length; i++) {
-myTable.rows[i].cells[columnInner+2].style.backgroundColor = color;
-}
-}
-
-invokeTable(0, "red")
-*/
-/*
-// A way bit of callback
-var myTable = document.querySelector("#myTable");
-function cb(index) {
-var index;
-if (invokeTable) {
+var index = -1;
+function invokedTable(color, boolean) {
+if (true) {
 this.index++
 }
-}
-
-function invokeTable(color, index, cb) {
-cb(index);
-var color; // para color belong to this function body
+var inc = index;
 for (i = 0; i < myTable.rows.length; i++) {
-myTable.rows[i].cells[index].style.backgroundColor = color;
-}
-}
-invokeTable("green", 0, function(){return this})
-*/
-/*
-var myTable = document.querySelector("#myTable");
-var index = 0;
-function counter(index) {
-return index++;
-}
-
-function invokedTable(color, counter) {
-counter();
-var color; // para color belong to this function body
-for (i = 0; i < myTable.rows.length; i++) {
-myTable.rows[i].cells[this.index].style.backgroundColor = color;
-}
-}
-undefined
-invokedTable("yellow", function() {return this})
+myTable.rows[i].cells[inc].style.backgroundColor = color;
+}}
+invokedTable("yellow", true) // repeat it 10 times to fill in with color completelelly
 */
 </script>
 
