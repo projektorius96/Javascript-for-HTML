@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+    <style>
+/* CSS */
+    </style>
+</head>
+<body>
+<ul>
+    <!-- whitespace comment text node -->
+  <li>firstElementChild[0Index]</li>
+    <!-- whitespace comment text node -->
+  <li>secondElementChild[1Index]</li>
+    <!-- whitespace comment text node -->
+  <li>thirdElementChild[2Index]</li>
+    <!-- whitespace comment text node -->
+</ul>
+<script>
+// 1_ DOM accessing mode and its iteration:
+/* return as HTMLcollection:
+    var all_list_collection = document.getElementsByTagName("LI"); // or if HTMLelements with any classes predefined pleasee use .getElementsByClass();
+    all_list_collection // __proto__:HTMLCollection
+    // loop through HTMLCollection:
+    for (i = 0; i < all_list_collection.length; i++) {
+    console.log(i) // [li, li, li]
+    }
+    var HTMLCollection_to_array = [].slice.call(all_list_collection, 0); // [].slice.call[reference, [start, [end[end not included | end can be ommited]]]])
+    console.log(HTMLCollection_to_array);
+*/
+/* */
+/* return as Nodelist:
+    var all_Nodelist = document.querySelectorAll("UL > *");
+    all_Nodelist // __proto__:Nodelist
+    // loop through Nodelist:
+    // A-way
+    all_Nodelist.forEach(function(item, index){
+    console.log(index, item);
+    })
+    // console all above first if B-way usage required otherwise will throw error: Unexpected token '...'
+    // B-way (A-way dependent)
+    [...all_Nodelist].map(function(item, index){
+    return `index:[${index}] which value is equal to: [${item}]`
+    })
+*/
+/* */
+/* 
+    *Use HTMLcollection for huge projects and Nodelist for small ones, unless "virtual" DOM corrections required behind the scene | also consider that ...
+    **... Nodelist referenced with .querySelectorAll() returns only static but not live as any method of HTMLcollection as default;
+    ***!The most important notice in between of those two are: a) HTMLCollection will ignore whitespace and Nodelist will not, so be careful! 
+*/
+// 2_ DOM traversing i.e. navigation methods have a tricky part for more read the section [DOM traversal and whitespace] the link is below
+// https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace
+</script>
+</body>
+</html>
