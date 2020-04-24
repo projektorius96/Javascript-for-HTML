@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul id="myList">
+  <li>Coffee (is self sibling)</li>
+  <li>Tea (is next.sibling of Coffee)</li>
+</ul>
+
+<script>
+// This prototype tut is a huge thanks for Armando user on stackoverflow [link below]
+// https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
+/* Custom Prototype injection meant for A) */
+Element.prototype.appendBefore = function (atPositionOf) {
+    atPositionOf.parentNode.insertBefore(this, atPositionOf);
+    // hereby ***this*** is same as ***insertME*** that is a part of Element.prototype
+}
+/* Custom Prototype injection meant for B) */
+Element.prototype.appendAfter = function (atPositionOf) {
+    atPositionOf.parentNode.insertBefore(this, atPositionOf.nextSibling);
+    // hereby ***this*** is same as ***insertME*** that is a part of Element.prototype
+}
+/* A) insertBefore  (predefined prototype) as appendBefore  (custom prototype)
+// Open browser's console and copy-pate code snippet into:
+var insertME = document.createElement("LI");
+var textnode = document.createTextNode("Water");
+insertME.appendChild(textnode);
+var list = document.getElementById("myList");
+insertME.appendBefore(list.childNodes[1]) // Before Coffee
+*/
+/* */
+/* B) insertAfter (custom prototype) as appendAfter (custom prototype)
+// Open browser's console and copy-pate code snippet into:
+var insertME = document.createElement("LI");
+var textnode = document.createTextNode("Milk");
+insertME.appendChild(textnode);
+var list = document.getElementById("myList");
+insertME.appendAfter(list.childNodes[1].nextSibling) // After Coffee or in between Coffee and Tea
+*/
+</script>
+
+</body>
+</html>
