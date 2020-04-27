@@ -12,9 +12,12 @@ Variable.addEventListener('keydown', (e) => {
 
 // keyup is fired whenever keyboard button is releasing
 // Notice: within keyup event fired e.g SHIFT + a gives  SHIFT + capital A
-var toArr = new Array();
-this.addEventListener('keyup', (e) => {
-var that = this;
-that.toArr.push(e.key)
-return `Key "${toArr}" pressed  [event: keydown]`;
+var toArr = new Array(1); /* only one vacation for one item available */
+this.addEventListener('keyup', function(e) {
+toArr.push(e.key); // add any first key pressed and released
+console.log(toArr) // console first lucky button
+/* */
+if(toArr.length > 0) {toArr.pop(toArr[0])} /* if (at least one value is in array) {
+remove the old as zero based and leave the last added as one coming after zero
+}  */
 });
