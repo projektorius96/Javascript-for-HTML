@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Target and CurrentTarget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        main{
+            background-color: #ffccf1;
+            color: blue;
+            padding: 1rem;
+        }
+        div{
+            background-color: #eaffa8;
+            color: red;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>event.target versus event.currentTarget (console it!)</h1>
+    <main>
+        This text is inside the &lt;main&gt; element.
+        <div>This text is inside the &lt;div&gt; element.</div>
+    </main>
+    <script>
+        // All credits to: https://gist.github.com/prof3ssorSt3v3/14d3aa4d187de8a1da073c931a66d702
+        // All credits to as well: https://medium.com/@florenceliang/javascript-event-delegation-and-event-target-vs-event-currenttarget-c9680c3a46d1
+        document.addEventListener("click", eHandler) // consider this as outermost (this)
+        // Event delegation: currenTarget shows where is the fixed origin point of addEventListener while target shows where eHandler of the fixed origin point takes place upon i.e event's origin point
+        function eHandler(e){
+            console.log('eHandler (currentTarget) of:', e.currentTarget.nodeName, 'Event origin point (target of)', e.target.tagName);
+        }
+        // Be noticed!: in most non event delegation cases both props will work but in most cases .target is a better choice!
+    </script>
+</body>
