@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Accessing Elements in the DOM</title>
+
+  <style>
+    html { font-family: sans-serif; color: #333; }
+    body { max-width: 500px; margin: 0 auto; padding: 0 15px; }
+    div { padding: 10px; margin: 5px; border: 1px solid #5e41ff; }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>DOM Nagvigation via KeyboardEvents</h1>
+
+    <div class="demo">Access me by class[0]</div>
+    <div class="demo">Access me by class[1]</div>
+    <div class="demo">Access me by class[2]</div>
+    <div class="demo">Access me by class[3]</div>
+    <div class="demo">Access me by class[4]</div>
+
+<script>
+/*
+var toYield;
+function* generator() {
+    toYield = []; // five iterable yieldedObject(s) will be pushed
+    var getElements = document.getElementsByClassName("demo");
+    for (let i=0; i<getElements.length; i++) 
+    yield toYield.push(getElements[i]); 
+}
+
+const iterator = generator();
+// var yielded;
+window.addEventListener('keydown', ()=> {
+   var yieldedObject = iterator.next();
+   console.log(yieldedObject); // yieldedObject has value:xyz/undefined and flag: false/done
+   colorizeIt();
+});
+
+function colorizeIt() {
+for (const items of toYield){
+    items.style.backgroundColor = "yellow";
+}
+}
+*/
+</script>
+</body>
+
+</html>
