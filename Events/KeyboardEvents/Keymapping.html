@@ -36,16 +36,24 @@ function* generator() {
 }
 
 const iterator = generator();
-// var yielded;
+var yieldedObject;
 window.addEventListener('keydown', ()=> {
-   var yieldedObject = iterator.next();
+   yieldedObject = iterator.next();
    console.log(yieldedObject); // yieldedObject has value:xyz/undefined and flag: false/done
    colorizeIt();
 });
 
 function colorizeIt() {
 for (const items of toYield){
+ switch(true) {
+  case yieldedObject.value >= 0:
     items.style.backgroundColor = "yellow";
+    break;
+  default:  items.style.backgroundColor = "white";
+    // code block
+}
+    
+    
 }
 }
 */
