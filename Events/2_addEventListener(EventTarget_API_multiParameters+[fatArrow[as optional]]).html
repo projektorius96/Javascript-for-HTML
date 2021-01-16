@@ -9,13 +9,10 @@
 </style>
 </head>
 <body>
-
 <h1 class="myDiv">HighLight me</h1> <!-- [0] -->
 <h2 class="myDiv">HighLight me</h2> <!-- [1] -->
 <h3 class="myDiv">HighLight me</h3> <!-- [2] -->
-
 <script>
-    
 var myPointer = document.querySelectorAll(".myDiv"); // reference to array-like object (NodeList) which (myPointer)...
 // ...in this case contains three elements of class="myDiv"
 // if call: myPointer[0] in console output we get: h1.myDiv so it's zero based array-like object (NodeList)
@@ -29,6 +26,7 @@ var myPointer = document.querySelectorAll(".myDiv"); // reference to array-like 
 // Without ***fatArrow ()=> syntax***   
 // syntax: myVariable.forEach( function(bindPara) { return bindPara.addEventListener("eventType", function(e) {eHandlerAsCallbackFnName(e)} ); } )
 // alt-syntax (changes only within eee's): myVariable.forEach( function(e) { return e.addEventListener("eventType", function(e) {eHandlerAsCallbackFnName(e)} ); } )
+/** .addEventlistener eHandler as anonymous function content body suits for single parameter usage as well, just comment out BLUE or remove completely; in such scenario do not forget to synch up eHanlder such as mouseOver below as well */
 myPointer.forEach( function(bindMe) { return bindMe.addEventListener("mouseover", function(e) { mouseOver(e, "blue"); } ) } );
 myPointer.forEach( function(bindMe) { return bindMe.addEventListener("mouseout", function(e) { mouseOut(e, "black"); } ) } );
 
@@ -41,7 +39,6 @@ function mouseOut(e, addCustomColor) {
 // e.style.color = "black";
 e.target.style.color = addCustomColor; // later change this line with callback invocation
 }
-
 </script>
 </body>
 </html>
