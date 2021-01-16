@@ -27,9 +27,10 @@ var myPointer = document.querySelectorAll(".myDiv"); // reference to array-like 
 // myPointer.forEach((e) => e.addEventListener("mouseout", (e) => mouseOut(e, "black"))); // apply mouseout event forEach element of class="myDiv"
 
 // Without ***fatArrow ()=> syntax***   
-// syntax: myVariable.forEach(function(event) { return event.addEventListener("eventType", function() {eHandlerAsCallbackFnName(FnHandlerEventParameter)} ); } )
-myPointer.forEach( function(e) { return e.addEventListener("mouseover", function(e) { mouseOver(e, "blue"); } ) } );
-myPointer.forEach( function(e) { return e.addEventListener("mouseout", function(e) { mouseOut(e, "black"); } ) } );
+// syntax: myVariable.forEach( function(bindPara) { return bindPara.addEventListener("eventType", function(e) {eHandlerAsCallbackFnName(e)} ); } )
+// alt-syntax (changes only within eee's): myVariable.forEach( function(e) { return e.addEventListener("eventType", function(e) {eHandlerAsCallbackFnName(e)} ); } )
+myPointer.forEach( function(bindMe) { return bindMe.addEventListener("mouseover", function(e) { mouseOver(e, "blue"); } ) } );
+myPointer.forEach( function(bindMe) { return bindMe.addEventListener("mouseout", function(e) { mouseOut(e, "black"); } ) } );
 
 function mouseOver(e, addCustomColor) {
 // e.style.color = "red";
